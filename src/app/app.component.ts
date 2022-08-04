@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-test-task-lemberg';
+  hiddenMenuShow:boolean = false;
+
+
+  onMenuClick(){
+    this.hiddenMenuShow = !this.hiddenMenuShow;
+  }
+  onCloseMenuClick(){
+    this.hiddenMenuShow = false;
+  }
 }

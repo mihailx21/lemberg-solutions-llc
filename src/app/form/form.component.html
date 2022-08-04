@@ -1,0 +1,77 @@
+<form class="form">
+    <!-- <div class="input-label-styling">ui/input/noactive</div> -->
+    <div class="d-flex">
+        <div class="input-item d-flex">
+            <label 
+                for="full-name" 
+                class="input-label-styling"
+                >
+                Full Name
+            </label>
+            <input 
+                type="text" 
+                id="full-name"  
+                [(ngModel)]="formData.fullName" 
+                #fullName = "ngModel"
+                [ngModelOptions]="{standalone: true}"
+                required
+            >
+            <!-- <input type="text" id="full-name" value={{fullName}} (change)="onInputFullName($event)"> -->
+            <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)">
+                <div class="input-label-styling error" *ngIf="fullName.errors?.['required']">
+                    Full Name is required
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="input-item d-flex">
+            <label for="company-name" class="input-label-styling">Company Name</label>
+            <input type="text" id="company-name" [(ngModel)]="formData.companyName" [ngModelOptions]="{standalone: true}">
+            <!-- <input type="text" id="company-name" value={{companyName}} (change)="onInputCompanyName($event)"> -->
+        </div>
+
+        <div class="input-item d-flex">
+            <label 
+                for="phone" 
+                class="input-label-styling"
+                >
+                Phone Number
+            </label>
+            <input 
+                type="text" 
+                id="phone"
+                [(ngModel)]="formData.phone"
+                #phone = "ngModel"
+                [ngModelOptions]="{standalone: true}"
+                required
+            >
+            <!-- <input type="text" id="phone" value={{telephoneNumber}} (change)="onInputTelephoneNumber($event)"> -->
+            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                <div class="input-label-styling error" *ngIf="phone.errors?.['required']">
+                    Phone Number required
+                </div>
+                <div class="input-label-styling error" *ngIf="phone.errors?.['invalid']">
+                    Phone Number is not valid
+                </div>
+            </div>
+        </div>
+
+        <div class="input-item d-flex">
+            <label for="email" class="input-label-styling">E-mail adress</label>
+            <input type="text" id="email" required [(ngModel)]="formData.email" [ngModelOptions]="{standalone: true}">
+            <!-- <input type="text" id="email" value={{emailAdress}} (change)="onInputEmail($event)"> -->
+            <div class="input-label-styling">E-mail adress is not valid</div>
+        </div>
+
+        <div class="input-item d-flex">
+            <label for="message" class="input-label-styling">Write Us Messages</label>
+            <input type="text" id="message" [(ngModel)]="formData.message" [ngModelOptions]="{standalone: true}">
+            <!-- <textarea id="message" cols="30" rows="2" value={{messages}} (change)="onInputMessage($event)"></textarea> -->
+        </div>
+
+        <button class="submit-button" (click)="getInfo()">Send Message</button>
+
+        <!-- <button class="submit-button" (click) = "getInfo()">Send Message</button> -->
+    </div>
+</form>
