@@ -1,3 +1,11 @@
+To start in Linux terminal:
+git clone https://github.com/mihailx21/lemberg-solutions-llc
+mkdir lemberg-solutions-llc
+npm install
+npm start
+
+
+
 # NgTestTaskLemberg
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
